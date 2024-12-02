@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Kingsman';
-  src: url("../assets/fonts/kingsman-font/KingsmanDemo-1GVgg.ttf") format('truetype');
+  font-family: 'Bebas-Neue';
+  src: url("../assets/fonts/kingsman-font/BebasNeue-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -8,8 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(159deg, #d399ff 28%, #9999ff 68%);
-  height: 100vh;
-  font-family: "Kingsman", sans-serif;
+  font-family: "Bebas-Neue", sans-serif;
 }
 
 .body{
