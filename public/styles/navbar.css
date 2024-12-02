@@ -1,0 +1,62 @@
+:root {
+  --text-primary: #5d30ff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8080ff;
+  height: 64px;
+  padding: 0 10px;
+}
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+.navbar .logo img {
+  margin-right: 10px;
+  height: 60px;
+}
+.navbar .logo span {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--text-primary);
+}
+.navbar .nav-links a.active1{
+  color : #d399ff;
+  font-size: 35px;
+  
+}
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+.nav-username {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.form-logout .logout {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.form-logout .logout img {
+  margin-right: 10px;
+  height: 50px;
+}
+
