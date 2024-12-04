@@ -18,8 +18,9 @@
             </div>
             <div class="card-footer">
                <span class="badge">143</span>
-               <a href="">
-               </a><button class="btn-details">Details</button>
+               <a href="?page=event">
+               Details
+               </a>
 
                <p>Organizers Name</p>
             </div>

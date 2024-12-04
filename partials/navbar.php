@@ -15,6 +15,7 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="../public/styles/footer.css">
     <link rel="stylesheet" href="../public/styles/authStyle.css">
     <link rel="stylesheet" href="../public/styles/eventsCards.css">
+    <link rel="stylesheet" href="../public/styles/eventDetails.css">
 </head>
 
 <?php 

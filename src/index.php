@@ -20,7 +20,8 @@ $myPages = [
     "home" => "home.php",
     "login" => "loginPage.php",
     "register" => "registerPage.php",
-    "dashboard" => $dashboardPage
+    "dashboard" => $dashboardPage,
+    "event" => "eventDetails.php"
 ];
 
 $page = $_GET["page"] ?? "home";
