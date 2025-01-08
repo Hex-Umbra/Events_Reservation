@@ -1,3 +1,4 @@
+<?php require_once "../database/connexion.php"?>
 <div class="event-body">
     <div class="event-container">
         <div class="left-side">

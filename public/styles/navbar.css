@@ -7,8 +7,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: #8080ff;
-  height: 64px;
+  height: 100px;
   padding: 0 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0);
 }
 .navbar .logo {
   display: flex;
@@ -19,9 +20,10 @@
   height: 60px;
 }
 .navbar .logo span {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--text-primary);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
 }
 .navbar .nav-links {
   display: flex;
@@ -36,10 +38,9 @@
   font-size: 25px;
   color: var(--text-primary);
 }
-.navbar .nav-links a.active1{
-  color : #d399ff;
+.navbar .nav-links a.active1 {
+  color: #d399ff;
   font-size: 35px;
-  
 }
 .navbar .nav-links a:hover {
   text-decoration: underline;
@@ -48,15 +49,23 @@
   font-size: 30px;
   font-weight: 500;
 }
-
-.form-logout .logout {
+.nav-links li .form-logout{
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
-.form-logout .logout img {
-  margin-right: 10px;
-  height: 50px;
-}
+.nav-links li .form-logout input {
+  color: #6a5acd;
+  border: none;
+  box-shadow: inset;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 15px;
+  background: red;
+  display: flex;
 
+}
+.nav-links li .form-logout input:hover {
+  background: #fbc2eb;
+}

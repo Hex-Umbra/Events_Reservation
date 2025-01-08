@@ -18,7 +18,7 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="../public/styles/eventDetails.css">
 </head>
 
-<?php 
+<?php
 $active_page = isset($_GET["page"]) ? $_GET["page"] : "home";
 ?>
 
@@ -34,17 +34,18 @@ $active_page = isset($_GET["page"]) ? $_GET["page"] : "home";
         <ul class="nav-links">
             <li><a href="?page=home" class='<?php echo $active_page === "home" ? "active1" : "" ?>'>Home</a></li>
             <?php if (isset($_SESSION["email"])) { ?>
-                <li><a href="?page=dashboard" class='<?php echo $active_page === "dashboard" ? "active1" : "" ?>'>Profile</a></li>
+                <li><a href="?page=dashboard"
+                        class='<?php echo $active_page === "dashboard" ? "active1" : "" ?>'>Profile</a></li>
                 <li>
                     <form class="form-logout" action="../src/auth/logout.php" method="POST">
-                        <button class="logout">
-                            <img src="../public/assets/images/logout_btn.svg" alt="">
-                        </button>
+                        <input type="submit" value="Déconnexion">
                     </form>
                 </li>
             <?php } else { ?>
-                <li><a href="?page=register" class='<?php echo $active_page === "register" ? "active1" : "" ?>'>Inscription</a></li>
-                <li><a href="?page=login" class='<?php echo $active_page === "login" ? "active1" : "" ?>'>Connection</a></li>
+                <li><a href="?page=register"
+                        class='<?php echo $active_page === "register" ? "active1" : "" ?>'>Inscription</a></li>
+                <li><a href="?page=login" class='<?php echo $active_page === "login" ? "active1" : "" ?>'>Connection</a>
+                </li>
             <?php } ?>
         </ul>
     </nav>

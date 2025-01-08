@@ -4,11 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
+ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(159deg, #d399ff 28%, #9999ff 68%);
   font-family: "Bebas-Neue", sans-serif;
+  min-height: 100vh;
 }
 
 .body{
