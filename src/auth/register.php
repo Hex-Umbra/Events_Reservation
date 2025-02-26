@@ -1,12 +1,13 @@
 <?php
 session_start();
 require_once "../../database/connexion.php";
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+if($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
 
     //Verification des données transmises et filtré
-    $username = filter_var($_POST["username"] ?? "", FILTER_SANITIZE_STRING);
+    $username = htmlspecialchars($_POST["username"] ?? "", ENT_QUOTES, 'UTF-8');
     $email = filter_var($_POST["email"] ?? "", FILTER_SANITIZE_EMAIL);
     $password = $_POST["password"];
     $role = "user";
@@ -41,7 +42,7 @@ if (empty($errors)) {
             $_SESSION["role"] = $role;
 
             //Redirection
-            header("Location:../?page=home");
+            header("Location:../../?page=home");
             exit();
         }
     } catch (PDOException $e) {

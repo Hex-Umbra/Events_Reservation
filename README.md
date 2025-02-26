@@ -31,6 +31,10 @@ This is an event reservation application where oragnizers can create events. The
       1. [ ] - Show all locations
       2. [ ] - Create new location
 
+#### Features to add later
+1. [ ] - Order events to not display passed events
+
+
 ## Data Dictionnary
 
 - 

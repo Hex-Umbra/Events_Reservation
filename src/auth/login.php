@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
 
-        header('Location: ../?page=home');
+        header('Location: ../../?page=home');
         exit();
     } catch (Exception $e) {
         echo htmlspecialchars($e->getMessage());

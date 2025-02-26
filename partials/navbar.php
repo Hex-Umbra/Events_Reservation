@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
 }
@@ -11,11 +10,11 @@ if (isset($_SESSION["username"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/navbar.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
-    <link rel="stylesheet" href="../public/styles/authStyle.css">
-    <link rel="stylesheet" href="../public/styles/eventsCards.css">
-    <link rel="stylesheet" href="../public/styles/eventDetails.css">
+    <link rel="stylesheet" href="./public/styles/navbar.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/styles/authStyle.css">
+    <link rel="stylesheet" href="./public/styles/eventsCards.css">
+    <link rel="stylesheet" href="./public/styles/eventDetails.css">
 </head>
 
 <?php
@@ -25,7 +24,7 @@ $active_page = isset($_GET["page"]) ? $_GET["page"] : "home";
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../public/assets/images/bird_logo.svg" alt="">
+            <img src="./public/assets/images/bird_logo.svg" alt="">
             <span>PlanEvent</span>
         </div>
         <?php if (!empty($username)) { ?>
@@ -37,7 +36,7 @@ $active_page = isset($_GET["page"]) ? $_GET["page"] : "home";
                 <li><a href="?page=dashboard"
                         class='<?php echo $active_page === "dashboard" ? "active1" : "" ?>'>Profile</a></li>
                 <li>
-                    <form class="form-logout" action="../src/auth/logout.php" method="POST">
+                    <form class="form-logout" action="./src/auth/logout.php" method="POST">
                         <input type="submit" value="Déconnexion">
                     </form>
                 </li>
