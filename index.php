@@ -4,13 +4,13 @@
 require_once "./database/connexion.php";
 
 if (empty($_SESSION)) {
-    include __DIR__ . "/partials/navbar.php"; // Show regular navbar for guests
+    include "./views/partials/navbar.php"; // Show regular navbar for guests
 } else {
     // Check the user's role
     if ($_SESSION["role"] === 'admin') {
-        include __DIR__ . "/partials/adminNavbar.php"; // Show admin navbar for admins
+        include "./views/partials/adminNavbar.php"; // Show admin navbar for admins
     } else {
-        include __DIR__ . "/partials/navbar.php"; // Show regular navbar for other roles
+        include "./views/partials/navbar.php"; // Show regular navbar for other roles
     }
 }
 

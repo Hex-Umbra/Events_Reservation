@@ -6,13 +6,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
 
-    //Verification des données transmises et filtré
+    // All fields are required and checked for validation
     $username = htmlspecialchars($_POST["username"] ?? "", ENT_QUOTES, 'UTF-8');
     $email = filter_var($_POST["email"] ?? "", FILTER_SANITIZE_EMAIL);
     $password = $_POST["password"];
     $role = "user";
 
-    //Email Validation
     //Check if email is already in use
     $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email");
     $stmt->bindParam(":email", $email);
@@ -22,6 +21,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors[] = "L'email est déjà utilisé";
     }
 }
+
 //Password Validation
 if (strlen($password) < 8) {
     $errors[] = "Le mot de passe doit contenir au moins 8 caractères";
