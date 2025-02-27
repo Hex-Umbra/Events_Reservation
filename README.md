@@ -2,13 +2,13 @@
 
 This is an event reservation application where oragnizers can create events. The users will then be able to log in to the system and reserve a seat for the event. The system will then send a confirmation email to the user.
 
-## Features
+## Objectives
 
 1. [x] - Register page for new users
 2. [x] - Login Page
 3. [x] - Show all oncoming events page
 4. [ ] - Each users can sign to an event (or multiple)
-5. [x] - Show Page for a specific event with all the details (description, date, place, time, organizer, number of places available)
+5. [] - Show Page for a specific event with all the details (description, date, place, time, organizer, number of places available)
 6. [ ] - User Profile
    1. [ ] - User can see all the events he signed to
    2. [ ] - User can cancel his sign to an event
@@ -33,8 +33,10 @@ This is an event reservation application where oragnizers can create events. The
       1. [ ] - Show all locations
       2. [ ] - Create new location
 
-#### Features to add later
+#### Changes to be made
 1. [ ] - Order events to not display passed events
+2. [ ] - Pagination for admin dashboard when viewing users, organisers, locations and events
+3. [ ] - Button "book now" only appears when user is logged in
 
 
 ## Data Dictionnary

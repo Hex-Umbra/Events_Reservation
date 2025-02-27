@@ -8,19 +8,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $role = "user";
 
   // Add User to the database
-  if ($username && $email && $password && $role) {
-    $controller->addUser($username, $password, $email, $role);
-    // If user is successfully add, add his credentials to the session
+  $newUser = $controller->createUser($username, $password, $email, $role);
+
+  //If the controller catches an error, display it
+  if (!$newUser["error"]) {
     $_SESSION["username"] = $username;
     $_SESSION["email"] = $email;
     $_SESSION["role"] = $role;
     header("Location: ./?page=home");
+    exit;
+  } else {
+    $error = $newUser["error"];
+    // If user is successfully added, add his credentials to the session
   }
 }
 ?>
 
 
 <div class="auth-body">
+  <?php if (isset($error)): ?>
+      <span class="error-message"><?= htmlspecialchars($error, ENT_QUOTES, "UTF-8") ?></span>
+  <?php endif ?>
   <div class="card">
     <h2 class="auth-h2">Create an account</h2>
     <form action="" method="POST" class="auth-form">

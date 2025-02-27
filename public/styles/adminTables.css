@@ -25,7 +25,3 @@
 .section-body .table-container th {
     background-color: #f2f2f2;
 }
-
-.section-body .table-container  tr:nth-child(even) {
-    background-color: #f9f9f9;
-}

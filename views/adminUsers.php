@@ -8,11 +8,7 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 ?>
 <!-- Fetching data -->
 <?php
-$sql_users =
-    "SELECT * FROM user";
-$stmt = $pdo->prepare($sql_users);
-$stmt->execute();
-$users = $stmt->fetchAll();
+$allUsers = $controller->getAllUsers();
 ?>
 <!-- Displaying the data -->
 <section class="section-body">
@@ -21,6 +17,7 @@ $users = $stmt->fetchAll();
         <table>
             <thead>
                 <tr>
+                    <th>Id n°</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -29,11 +26,12 @@ $users = $stmt->fetchAll();
             </thead>
             <tbody>
 
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($allUsers as $user): ?>
                     <tr>
-                        <td><?php echo $user["name"] ?></td>
-                        <td><?php echo $user["email"] ?></td>
-                        <td><?php echo $user["role"] ?></td>
+                        <td><?= $user['id_user'] ?></td>
+                        <td><?= $user["name"] ?></td>
+                        <td><?= $user["email"] ?></td>
+                        <td><?= $user["role"] ?></td>
                         <td></td>
                         <td>
                             <form action="">

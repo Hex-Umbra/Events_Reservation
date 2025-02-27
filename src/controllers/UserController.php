@@ -11,8 +11,17 @@ class UserController
         $this->userModel = new User($db);
     }
 
-    public function addUser($name, $password, $email, $role)
+    public function createUser($name, $password, $email, $role): mixed
     {
-        $this->userModel->createUser($name, $password, $email, $role);
+        return $this->userModel->createUser($name, $password, $email, $role);
+        
+    }
+
+    public function checkUser($email, $password): mixed{
+        return $this->userModel->checkUser($email, $password);
+    }
+
+    public function getAllUsers(): mixed{
+        return $this->userModel->getAllUsers();
     }
 }

@@ -1,9 +1,16 @@
-.auth-body{
+.auth-body {
   width: 100%;
   height: calc(100vh - 122px);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.error-message{
+  color: #ff0000;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
 .card {
@@ -44,7 +51,7 @@
   background: #00b3b35d;
 }
 
-.btn-submit{
+.btn-submit {
   background-color: #8ec5fc;
   font-size: 2em;
   margin-top: 4em;
@@ -54,12 +61,11 @@
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.btn-submit:hover{
+.btn-submit:hover {
   background-color: #6db6ff;
   cursor: pointer;
 }
 
-::placeholder{
+::placeholder {
   color: #5d30ff71;
 }
-
