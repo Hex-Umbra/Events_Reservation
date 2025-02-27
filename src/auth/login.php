@@ -1,5 +1,6 @@
 <?php
 require_once "../../database/connexion.php";
+$controller = new UserController($pdo);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
