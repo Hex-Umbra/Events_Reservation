@@ -3,6 +3,22 @@
   padding: 0;
 }
 
+.section-body .createUser-button{
+    top: 20px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.section-body .createUser-button:hover{
+    background-color: #3e8e41;
+}
+
 .section-body .table-container {
     width: 100%;
     margin: 50px auto;

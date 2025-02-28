@@ -33,8 +33,9 @@ $myPages = [
     "event" => "eventDetails.php",
     "allUsers" => "adminUsers.php",
     "allOrganizers" => "adminOrganizers.php",
-    "editUser" => "updateUser.php",
-    "deleteUser" => "deleteUser.php",
+    "editUser" => "adminUpdateUser.php",
+    "deleteUser" => "adminDeleteUser.php",
+    "createUser" => "adminCreateUser.php",
 ];
 
 $page = $_GET["page"] ?? "home";

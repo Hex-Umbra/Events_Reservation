@@ -11,9 +11,9 @@ $allUsers = $controller->getAllUsers();
 ?>
 <!-- Displaying the data -->
 <section class="section-body">
-    <a href="?page=createUser">Add a new User</a>
     <div class="table-container">
-        <h1>All Users</h1>
+        <h1>All Users <a class="createUser-button" href="?page=createUser">Add a new User</a></h1>
+        
         <?php if (isset($_SESSION["successMessage"])): ?>
                 <span class="success-message"><?= $_SESSION["successMessage"] ?></span>
                 <?php 

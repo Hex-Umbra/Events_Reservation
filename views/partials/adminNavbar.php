@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./public/styles/adminTables.css">
     <link rel="stylesheet" href="./public/styles/adminUpdateUser.css">
     <link rel="stylesheet" href="./public/styles/adminDeleteUser.css">
+    <link rel="stylesheet" href="./public/styles/adminCreateUser.css">
     <title>Document</title>
 </head>
 

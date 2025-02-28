@@ -20,7 +20,7 @@ This is an event reservation application where oragnizers can create events. The
       4. [ ] - Delete event
    2. About users
       1. [x] - Show all users
-      2. [ ] - Create new user
+      2. [x] - Create new user
       3. [x] - Edit user
       4. [x] - Delete user
       5. [ ] - Suspend user (inscription not completed)
