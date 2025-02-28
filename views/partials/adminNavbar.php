@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./public/styles/main.css">
     <link rel="stylesheet" href="./public/styles/adminNavbar.css">
     <link rel="stylesheet" href="./public/styles/adminTables.css">
+    <link rel="stylesheet" href="./public/styles/adminUpdateUser.css">
+    <link rel="stylesheet" href="./public/styles/adminDeleteUser.css">
     <title>Document</title>
 </head>
 

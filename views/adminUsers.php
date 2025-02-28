@@ -4,16 +4,22 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
     header('Location: ./?page=home');
     exit; // Stop further script execution after the redirect
 }
-
-?>
+    ?>
 <!-- Fetching data -->
 <?php
 $allUsers = $controller->getAllUsers();
 ?>
 <!-- Displaying the data -->
 <section class="section-body">
+    <a href="?page=createUser">Add a new User</a>
     <div class="table-container">
         <h1>All Users</h1>
+        <?php if (isset($_SESSION["successMessage"])): ?>
+                <span class="success-message"><?= $_SESSION["successMessage"] ?></span>
+                <?php 
+                unset($_SESSION["successMessage"]);
+                ?>
+        <?php endif ?>
         <table>
             <thead>
                 <tr>
@@ -34,16 +40,17 @@ $allUsers = $controller->getAllUsers();
                         <td><?= $user["role"] ?></td>
                         <td></td>
                         <td>
-                            <form action="">
-                                <button type="submit">Delete</button>
-                            </form>
-                            <form action="">
-                                <button type="submit">Edit</button>
-                            </form>
+                            <a href="?page=deleteUser&id_user=<?= $user["id_user"]?>">Delete</a>
+                            <a href="?page=editUser&id_user=<?= $user["id_user"] ?>">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
-            </tbody>
+
         </table>
     </div>
+    <?php if (isset($_SESSION["Message"])): ?>
+        <div class="alert alert-success">
+            <?= $_SESSION["Message"] ?>
+        </div>
+    <?php endif; ?>
 </section>

@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="./public/styles/main.css">
 
 <?php session_start();
-require_once "./database/connexion.php";
-require_once "./src/controllers/UserController.php";
+require_once "../database/connexion.php";
+require_once "../src/controllers/UserController.php";
 
 $controller = new UserController($pdo);
 
 if (empty($_SESSION)) {
-    include "./views/partials/navbar.php"; // Show regular navbar for guests
+    include "../views/partials/navbar.php"; // Show regular navbar for guests
 } else {
     // Check the user's role
     if ($_SESSION["role"] === 'admin') {
-        include "./views/partials/adminNavbar.php"; // Show admin navbar for admins
+        include "../views/partials/adminNavbar.php"; // Show admin navbar for admins
     } else {
-        include "./views/partials/navbar.php"; // Show regular navbar for other roles
+        include "../views/partials/navbar.php"; // Show regular navbar for other roles
     }
 }
 
@@ -33,29 +33,31 @@ $myPages = [
     "event" => "eventDetails.php",
     "allUsers" => "adminUsers.php",
     "allOrganizers" => "adminOrganizers.php",
+    "editUser" => "updateUser.php",
+    "deleteUser" => "deleteUser.php",
 ];
 
 $page = $_GET["page"] ?? "home";
 if (array_key_exists($page, $myPages)) {
 
-    $filePath = __DIR__ . "/views/" . $myPages[$page];
+    $filePath = "../views/" . $myPages[$page];
 
     if (file_exists($filePath)) {
         include $filePath;
     } else {
-        include "./views/notFound404.php";
+        include "../views/notFound404.php";
     }
 } else {
-    include "./views/notFound404.php";
+    include "../views/notFound404.php";
 }
 
 
 if (empty($_SESSION)) {
-    include "./views//partials/footer.php"; // Show regular navbar for guests
+    include "../views/partials/footer.php"; // Show regular navbar for guests
 } else {
     // Check the user's role
     if ($_SESSION["role"] === 'user') {
-        include "./views//partials/footer.php";
+        include "../views//partials/footer.php";
     }
 }
 

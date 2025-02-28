@@ -9,7 +9,7 @@ class User
     }
 
     // Create a new user
-    public function createUser($name, $password, $email, $role)
+    public function createUser($name, $password, $email, $role): mixed
     {
         try {
             // Email validation
@@ -42,7 +42,7 @@ class User
         }
     }
 
-    public function checkUser($email, $password)
+    public function checkUser($email, $password): mixed
     {
         try {
             // Email validation
@@ -64,7 +64,7 @@ class User
         }
     }
 
-    public function getAllUsers()
+    public function getAllUsers(): mixed
     {
         try {
             $sqlRequest = "SELECT * FROM user";
@@ -77,7 +77,7 @@ class User
         }
     }
 
-    public function getUserById($idUser)
+    public function getUserById($idUser): mixed
     {
         try {
             $sqlRequest = "SELECT * FROM user WHERE id_user = :id_user";
@@ -87,6 +87,65 @@ class User
         } catch (\Throwable $th) {
             error_log($th->getMessage());
             return ["error" => "Something went wrong when getting the user by id"];
+        }
+    }
+
+    public function updateUser($idUser, $username, $role, $email)
+    {
+        try {
+            //Sanitization of email
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return ["error" => "Invalid email format"];
+            }
+
+            //Checking if the role is valid
+            $validRoles = ['admin', 'user'];
+            if (!in_array($role, $validRoles)) {
+                return ["error" => "Invalid role"];
+            }
+            //Checking if the username is valid
+            if (strlen($username) < 3 || strlen($username) > 20) {
+                return ["error" => "Username must be between 3 and 20 characters long"];
+            }
+
+
+            //Sql Request for updating the username, the role or the email
+            $sqlRequest =
+                "UPDATE user 
+                SET name = :username, role = :role, email = :email
+                WHERE id_user = :id_user";
+
+            $stmt = $this->pdo->prepare($sqlRequest);
+            if (
+                $stmt->execute([
+                    ":username" => $username,
+                    ":role" => $role,
+                    ":id_user" => $idUser,
+                    ":email" => $email
+                ])
+            ) {
+                return ["success" => "User <?= $username ?> updated successfully"];
+            } else {
+                return ["error" => "Something went wrong when updating the user"];
+            }
+            ;
+
+        } catch (\Throwable $th) {
+            error_log($th->getMessage());
+            return ["error" => "Something went wrong while updating the user"];
+        }
+
+    }
+
+    public function deleteUser($idUser)
+    {
+        try{
+            $sqlRequest = "DELETE FROM user WHERE id_user = :id_user";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            return $stmt->execute([":id_user" => $idUser]);
+        } catch (\Throwable $th) {
+            error_log($th->getMessage());
+            return ["error" => "Something went wrong while deleting the user"];
         }
     }
 }

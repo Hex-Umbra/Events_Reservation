@@ -14,14 +14,31 @@ class UserController
     public function createUser($name, $password, $email, $role): mixed
     {
         return $this->userModel->createUser($name, $password, $email, $role);
-        
+
     }
 
-    public function checkUser($email, $password): mixed{
+    public function checkUser($email, $password): mixed
+    {
         return $this->userModel->checkUser($email, $password);
     }
 
-    public function getAllUsers(): mixed{
+    public function getAllUsers(): mixed
+    {
         return $this->userModel->getAllUsers();
+    }
+
+    public function getUserById($id): mixed
+    {
+        return $this->userModel->getUserById($id);
+    }
+
+    public function updateUser($id, $name, $role, $email): mixed
+    {
+        return $this->userModel->updateUser($id, $name, $role, $email);
+    }
+
+    public function deleteUser($id)
+    {
+        return $this->userModel->deleteUser($id);
     }
 }
