@@ -9,7 +9,7 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 if (isset($_GET["id_user"])) {
     $id_user = $_GET["id_user"];
     //From this id we retrieve the user and unset the password
-    $user = $controller->getUserById($id_user);
+    $user = $userController->getUserById($id_user);
     unset($user["password"]);
 } else {
     echo "User not found";
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = htmlspecialchars($_POST["username"]);
     $role = $_POST["role"];
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $updatedUser = $controller->updateUser($id_user, $name, $role, $email);
+    $updatedUser = $userController->updateUser($id_user, $name, $role, $email);
 
     if (isset($updatedUser["error"])) {
         $errorMessage = $updatedUser["error"];

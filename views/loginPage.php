@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $password = $_POST["password"] ?? "";
 
   // Validate the data
-  $user = $controller->checkUser($email, $password);
+  $user = $userController->checkUser($email, $password);
 
   // Check for errors or successful user retrieval
   if (isset($user["error"])) {

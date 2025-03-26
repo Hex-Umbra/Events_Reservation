@@ -1,25 +1,8 @@
-<?php
-
-$admin_event_style = "";
-if (isset($_SESSION["role"])) {
-   if ($_SESSION["role"] === "admin") {
-      $admin_event_style = "./public/styles/adminEvents.css";
-   }
-}
-?>
-<link rel="stylesheet" href=<?= $admin_event_style ?>>
 <div class="events-body">
 
    <div class="events-container">
       <?php
-      $req =
-         "SELECT events.*, organisation.nom_org AS org_name FROM events 
-      JOIN organisation 
-      ON events.id_org = organisation.id_org
-      ORDER BY events.date ASC";
-      $stmt = $pdo->prepare($req);
-      $stmt->execute();
-      $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $events = $eventController->getAllEventsByDate();
       ?>
       <?php foreach ($events as $event): ?>
          <div class="event-card">

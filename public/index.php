@@ -3,8 +3,10 @@
 <?php session_start();
 require_once "../database/connexion.php";
 require_once "../src/controllers/UserController.php";
+require_once "../src/controllers/EventsController.php";
 
-$controller = new UserController($pdo);
+$userController = new UserController($pdo);
+$eventController = new EventsController($pdo);
 
 if (empty($_SESSION)) {
     include "../views/partials/navbar.php"; // Show regular navbar for guests
@@ -17,25 +19,27 @@ if (empty($_SESSION)) {
     }
 }
 
-$dashboardPage = "dashboard/dashboardUser.php";
+$homePage = "home.php";
 
 if (isset($_SESSION["role"])) {
     if ($_SESSION["role"] === "admin") {
-        $dashboardPage = "dashboard/dashboardAdmin.php";
+        $homePage = "adminPages//adminEvents.php";
     }
 }
 
 $myPages = [
-    "home" => "home.php",
+    "home" => $homePage,
     "login" => "loginPage.php",
     "register" => "registerPage.php",
-    "dashboard" => $dashboardPage,
     "event" => "eventDetails.php",
-    "allUsers" => "adminUsers.php",
-    "allOrganizers" => "adminOrganizers.php",
-    "editUser" => "adminUpdateUser.php",
-    "deleteUser" => "adminDeleteUser.php",
-    "createUser" => "adminCreateUser.php",
+    "allUsers" => "adminPages/adminUsers.php",
+    "allOrganizers" => "adminPages/adminOrganizers.php",
+    "editUser" => "adminPages/adminUpdateUser.php",
+    "deleteUser" => "adminPages/adminDeleteUser.php",
+    "createUser" => "adminPages/adminCreateUser.php",
+    "createEvent" => "adminPages/adminCreateEvent.php",
+    "editEvent" => "adminPages/adminUpdateEvent.php",
+    "deleteEvent" => "adminPages/adminDeleteEvent.php",
 ];
 
 $page = $_GET["page"] ?? "home";

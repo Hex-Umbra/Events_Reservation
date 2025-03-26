@@ -1,7 +1,6 @@
 .events-body {
-  background-color: #d1b3ff;
-  margin: 0;
-  padding: 0;
+  /* background-color: #d1b3ff; */
+  margin-top: 1em;
 }
 .events-container {
   display: flex;

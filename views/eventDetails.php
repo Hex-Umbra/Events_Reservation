@@ -1,43 +1,47 @@
+<?php
+if (isset($_GET["id_event"])) {
+    $id_event = $_GET["id_event"];
+    $event = $eventController->getEventById($id_event);
+}
+
+?>
+
 <div class="event-body">
     <div class="event-container">
         <div class="left-side">
-            <img src="https://picsum.photos/seed/picsum/600/400" alt="">
-            <h1>Event Name</h1>
-            <h2>Organizers name</h2>
+            <img src="<?= $event["image_url"] ?>" alt="">
+            <h1><?= $event["name"] ?></h1>
+            <h2><?= $event["id_org"] ?></h2>
         </div>
         <div class="right-side">
             <div class="description">
                 <h3>Description</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non blanditiis qui voluptatibus facere.
-                    Assumenda obcaecati rerum dicta omnis libero odit, neque nobis distinctio, voluptas mollitia optio
-                    natus, hic reiciendis non!
-                    Quod quos non quam incidunt nisi consequatur quisquam voluptatem asperiores atque, veritatis aperiam
-                    sed, aliquid perferendis inventore quia praesentium debitis voluptatum ullam quas maxime facere
-                    magnam aliquam? Veritatis, dolores dignissimos.
-                    Dolores, corrupti ullam dolore dignissimos animi illo adipisci tempore recusandae aspernatur? Eum
-                    perferendis aut suscipit consequatur, libero corrupti sequi error atque enim, eaque consequuntur est
-                    laudantium totam perspiciatis, quis doloremque?
-                    Optio ducimus quae deserunt maxime, illum excepturi beatae cumque libero. Nulla consequuntur sint
-                    magnam vitae, repellendus voluptatem a laudantium? Dolor, quo. Quisquam et minima, numquam atque
-                    libero ipsa fuga molestiae?</p>
+                <p><?= $event["description"] ?></p>
             </div>
             <div class="details">
                 <p>
-                    Date: <span>12/04/2025</span>
+                    Date: <span><?= $event["date"] ?></span>
                 </p>
                 <p>
-                    Heure: <span>12:00</span>
+                    Heure: <span><?= $event["time"] ?></span>
                 </p>
                 <p>
-                    Adresse:<span> 3, places des tulipes, 45666, Saint-nazare</span>
+                    Adresse:<span> <?= $event["location"] ?></span>
                 </p>
                 <p>
-                    Places Restantes: <span>333</span>
+                    Places Restantes: <span><?= $event["places_available"] ?></span>
                 </p>
                 <p>
-                    Si vous voulez participer a cet événement veuillez vous connecter
+                    Prix: <span><?= $event["price"] ?></span>
                 </p>
-                <form action=""><input type="submit" value="Participer"></form>
+                <?php if (!isset($_SESSION["role"])): ?>
+                    <p>
+                        Si vous voulez participer a cet événement veuillez vous connecter
+                    </p>
+                <?php else: ?>
+                    <form action=""><input type="submit" value="Participer"></form>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
   position: absolute;
   right: 30%;
   left: 30%;
-  top: 20%;
+  top: 10%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -26,6 +26,15 @@
 }
 
 .create-section form input {
+  width: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: larger;
+}
+
+.create-section form textarea {
   width: auto;
   padding: 10px;
   margin-bottom: 20px;

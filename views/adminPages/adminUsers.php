@@ -7,7 +7,7 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
     ?>
 <!-- Fetching data -->
 <?php
-$allUsers = $controller->getAllUsers();
+$allUsers = $userController->getAllUsers();
 ?>
 <!-- Displaying the data -->
 <section class="section-body">

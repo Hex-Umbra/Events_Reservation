@@ -10,6 +10,7 @@
   background: linear-gradient(159deg, #d399ff 28%, #9999ff 68%);
   font-family: "Bebas-Neue", sans-serif;
   min-height: 100vh;
+  max-height: fit-content;
 }
 
 .body{
