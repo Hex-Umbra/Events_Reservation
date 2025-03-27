@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $role = "user";
 
   // Add User to the database
-  $newUser = $controller->createUser($username, $password, $email, $role);
+  $newUser = $userController->createUser($username, $password, $email, $role);
 
   //If the controller catches an error, display it
   if (!$newUser["error"]) {

@@ -4,9 +4,11 @@
 require_once "../database/connexion.php";
 require_once "../src/controllers/UserController.php";
 require_once "../src/controllers/EventsController.php";
+require_once "../src/controllers/OrganizationsController.php";
 
 $userController = new UserController($pdo);
 $eventController = new EventsController($pdo);
+$organizationController = new OrganizationsController($pdo);
 
 if (empty($_SESSION)) {
     include "../views/partials/navbar.php"; // Show regular navbar for guests
@@ -40,6 +42,9 @@ $myPages = [
     "createEvent" => "adminPages/adminCreateEvent.php",
     "editEvent" => "adminPages/adminUpdateEvent.php",
     "deleteEvent" => "adminPages/adminDeleteEvent.php",
+    "createOrg" => "adminPages/adminCreateOrganization.php",
+    "editOrg" => "adminPages/adminUpdateOrganization.php",
+    "deleteOrg" => "adminPages/adminDeleteOrganization.php",
 ];
 
 $page = $_GET["page"] ?? "home";

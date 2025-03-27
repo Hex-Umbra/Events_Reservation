@@ -30,9 +30,9 @@ This is an event reservation application where organizers can create events. The
       5. [ ] - Suspend user (subscription not completed)
    3. About organisers
       1. [x] - Show all organisers
-      2. [ ] - Create new organiser
+      2. [x] - Create new organiser
       3. [ ] - Edit organiser
-      4. [ ] - Delete organiser
+      4. [x] - Delete organiser
    4. About Locations
       1. [ ] - Show all locations
       2. [ ] - Create new location
@@ -49,6 +49,7 @@ This is an event reservation application where organizers can create events. The
 7. [ ] - Add a filter for events (to see which events are coming soon, which are today, which are past and by category)
 8. [ ] - Change the "Edit" and "Delete" Buttons For Users, Organizers and Events
 9. [ ] - For the edit Section in users, Change the Input role to a Select with the two options, admin or user.
+10. [ ] - Make the UI for admin while viewing an event more user friendly.
 
 
 
