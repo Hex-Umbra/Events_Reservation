@@ -43,7 +43,7 @@ $myPages = [
     "editEvent" => "adminPages/adminUpdateEvent.php",
     "deleteEvent" => "adminPages/adminDeleteEvent.php",
     "createOrg" => "adminPages/adminCreateOrganization.php",
-    "editOrg" => "adminPages/adminUpdateOrganization.php",
+    "editOrg" => "adminPages/adminUpdateOrganizer.php",
     "deleteOrg" => "adminPages/adminDeleteOrganization.php",
 ];
 

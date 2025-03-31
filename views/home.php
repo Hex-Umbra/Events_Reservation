@@ -22,7 +22,7 @@
             <div class="card-footer">
                <span class="badge">Places: <?= $event["places_available"] ?> </span>
                <span class="badge"><?= $event["price"] ?>€ </span>
-               <a href="?page=event&id=<?= $event['id_event'] ?>">
+               <a href="?page=event&id_event=<?= $event['id_event'] ?>">
                   More Details
                </a>
 

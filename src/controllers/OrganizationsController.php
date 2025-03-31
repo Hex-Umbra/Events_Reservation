@@ -29,5 +29,9 @@ class OrganizationsController
     public function deleteOrganization($id){
         return $this->organizationsModel->deleteOrganizer($id);
     }
+
+    public function editOrganization($id, $name, $email, $phone){
+        return $this->organizationsModel->updateOrganizer($id, $name, $email, $phone);
+    }
 }
 

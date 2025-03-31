@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $updatedEvent = $eventController->updateEvent($id_event, $name, $description, $date, $time, $places_available, $price, $location, $image_url, $id_org);
 
     if (isset($updatedEvent["error"])) {
-        $errorMessage = $updatedEvent["error"];
+        $error = $updatedEvent["error"];
     } else if (isset($updatedEvent["success"])) {
         $_SESSION["successMessage"] = $updatedEvent["success"];
         header("Location: ./?page=home");

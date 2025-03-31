@@ -27,15 +27,14 @@ This is an event reservation application where organizers can create events. The
       2. [x] - Create new user
       3. [x] - Edit user
       4. [x] - Delete user
-      5. [ ] - Suspend user (subscription not completed)
    3. About organisers
       1. [x] - Show all organisers
       2. [x] - Create new organiser
-      3. [ ] - Edit organiser
+      3. [X] - Edit organiser
       4. [x] - Delete organiser
-   4. About Locations
-      1. [ ] - Show all locations
-      2. [ ] - Create new location
+   <!-- 4. About Locations
+      5. [ ] - Show all locations
+      6. [ ] - Create new location -->
 
 #### Changes to be made
 1. [ ] - Order events to not display passed events

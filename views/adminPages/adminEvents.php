@@ -9,6 +9,7 @@ if (isset($_SESSION["role"])) {
 <!-- Fetching Data -->
 <?php
 $events = $eventController->getAllEvents();
+
 ?>
 <!-- Displaying the data -->
 <section class="section-body">
@@ -50,7 +51,8 @@ $events = $eventController->getAllEvents();
                         <td><?php echo $event["time"] ?></td>
                         <td><?php echo $event["places_available"] ?></td>
                         <td><?php echo $event["price"] . "€" ?></td>
-                        <td><?php echo $event["id_org"] ?></td>
+                        <td><?php $organizer = $organizationController->getOrganizationById($event["id_org"]);
+                        echo $organizer["nom_org"] ?></td>
                         <td>
                             <a href="?page=event&id_event=<?= $event["id_event"] ?>">Go to Event Page</a>
                             <a href="?page=deleteEvent&id_event=<?= $event["id_event"] ?>">Delete</a>

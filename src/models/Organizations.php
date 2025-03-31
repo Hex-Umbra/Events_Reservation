@@ -56,4 +56,31 @@ class Organizations
             return ["error" => "There was an issue deleting the organizer from the database"];
         }
     }
+
+    public function updateOrganizer($id, $name, $email, $number)
+    {
+        try {
+            //Sanitization of email
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return ["error" => "Invalid email format"];
+            }
+            $sqlRequest = "UPDATE organisation SET nom_org = :name, email = :email, tel = :number WHERE id_org = :id";
+            $stmt = $this->pdo->prepare($sqlRequest);
+
+            if($stmt->execute([
+                "id" => $id,
+                "name" => $name,
+                "email" => $email,
+                "number" => $number
+            ])){
+                return ["success" => "Organizer updated successfully"];
+
+            }else{
+                return ["error" => "There was an issue updating the organizer"];
+            }
+            
+        } catch (\Throwable $th) {
+            return ["error" => $th];
+        }
+    }
 }

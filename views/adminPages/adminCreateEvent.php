@@ -5,6 +5,8 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
     exit; // Stop further script execution after the redirect
 }
 
+$organizers = $organizationController->getOrganizations();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["name"];
     $description = $_POST["description"];
@@ -44,11 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="number" name="places_available" placeholder="Number of places available" required>
         <input type="text" name="image_url" placeholder="Image URL" required />
         <select name="id_org">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <?php foreach($organizers as $organizer):?>
+                <option value="<?= $organizer["id_org"] ?>"><?= $organizer["nom_org"] ?></option>
+
+            <?php endforeach ?>    
         </select>
         <button class="btn-submit">Add new Event</button>
     </form>

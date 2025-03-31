@@ -132,7 +132,7 @@ class User
 
         } catch (\Throwable $th) {
             error_log($th->getMessage());
-            return ["error" => "Something went wrong while updating the user"];
+            return ["error" => "Something went wrong while connecting to the database"];
         }
 
     }

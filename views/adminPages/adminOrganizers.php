@@ -38,7 +38,7 @@ $organizers = $organizationController->getOrganizations();
                         <td><?php echo $organizer["email"] ?></td>
                         <td>
                             <a href="?page=deleteOrg&id_org=<?= $organizer["id_org"] ?>">Delete</a>
-                            <a href="">Update</a>
+                            <a href="?page=editOrg&id_org=<?= $organizer["id_org"] ?>">Update</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
