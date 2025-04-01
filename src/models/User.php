@@ -90,6 +90,19 @@ class User
         }
     }
 
+    public function getUserByEmail($email_user){
+        try {
+            $sqlRequest = "SELECT id_user FROM user WHERE email = :email_user";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute([":email_user" => $email_user]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result ?: null;
+        } catch (\Throwable $th) {
+            error_log($th->getMessage());
+            return ["error" => "Something went wrong when getting the user by id"];
+        }
+    }
+
     public function updateUser($idUser, $username, $role, $email)
     {
         try {

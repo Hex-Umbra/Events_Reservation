@@ -41,4 +41,8 @@ class UserController
     {
         return $this->userModel->deleteUser($id);
     }
+
+    public function getUserByEmail($email){
+        return $this->userModel->getUserByEmail($email);
+    }
 }

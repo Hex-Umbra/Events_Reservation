@@ -5,10 +5,12 @@ require_once "../database/connexion.php";
 require_once "../src/controllers/UserController.php";
 require_once "../src/controllers/EventsController.php";
 require_once "../src/controllers/OrganizationsController.php";
+require_once "../src/controllers/ReservationController.php";
 
 $userController = new UserController($pdo);
 $eventController = new EventsController($pdo);
 $organizationController = new OrganizationsController($pdo);
+$reservationController = new ReservationController($pdo);
 
 if (empty($_SESSION)) {
     include "../views/partials/navbar.php"; // Show regular navbar for guests

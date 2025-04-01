@@ -95,22 +95,40 @@ class Events
             image_url = :image_url, id_org =  :id_org 
             WHERE id_event = :id_event";
             $stmt = $this->pdo->prepare($sqlRequest);
-            if($stmt->execute([
-                "id_event" => $id_event,
-                "name" => $name,
-                "description" => $description,
-                "date" => $date,
-                "time" => $time,
-                "places_available" => $places_available,
-                "price" => $price,
-                "location" => $location,
-                "image_url" => $image_url,
-                "id_org" => $id_org
-            ])){
+            if (
+                $stmt->execute([
+                    "id_event" => $id_event,
+                    "name" => $name,
+                    "description" => $description,
+                    "date" => $date,
+                    "time" => $time,
+                    "places_available" => $places_available,
+                    "price" => $price,
+                    "location" => $location,
+                    "image_url" => $image_url,
+                    "id_org" => $id_org
+                ])
+            ) {
                 return ["success" => "Event updated successfully"];
-            };
+            }
+            ;
         } catch (\Throwable $th) {
             return ["error" => "Database Access Error"];
         }
     }
+
+    public function augmentByOnePlace($id_event)
+    {
+        try {
+            $sqlRequest =
+                "UPDATE events 
+                WHERE id_event = :id_event
+                SET places_available = places_available + 1";
+                $stmt = $this->pdo->prepare($sqlRequest);
+                $stmt->execute(["id_event" => $id_event]);
+        } catch (\Throwable $th) {
+            return ["error" => "Database Access Error, couldn't reduce places available"];
+        }
+    }
+    
 }

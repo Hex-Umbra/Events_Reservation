@@ -1,3 +1,9 @@
+<?php
+      if($_SERVER["REQUEST_METHOD"] === "POST"){
+         $id_event ;
+      }
+?>
+
 <div class="events-body">
 
    <div class="events-container">
@@ -28,15 +34,6 @@
 
             </div>
             <p class="org-name"><?= $event["org_name"] ?> </p>
-            <?php if (!isset($_SESSION["role"])): ?>
-               <p class="connect-check">
-                  Si vous voulez participer a cet événement veuillez vous connecter
-               </p>
-            <?php else: ?>
-               <div class="participate-btn">
-                  <form action=""><input type="submit" value="Participer"></form>
-               </div>
-            <?php endif; ?>
          </div>
       <?php endforeach; ?>
 
