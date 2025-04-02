@@ -15,6 +15,8 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="./public/styles/authStyle.css">
     <link rel="stylesheet" href="./public/styles/eventsCards.css">
     <link rel="stylesheet" href="./public/styles/eventDetails.css">
+    <link rel="stylesheet" href="./public/styles/userDashboard.css">
+    
 </head>
 
 <?php
@@ -33,8 +35,8 @@ $active_page = isset($_GET["page"]) ? $_GET["page"] : "home";
         <ul class="nav-links">
             <li><a href="?page=home" class='<?php echo $active_page === "home" ? "active1" : "" ?>'>Home</a></li>
             <?php if (isset($_SESSION["email"])) { ?>
-                <li><a href="?page=dashboard"
-                        class='<?php echo $active_page === "dashboard" ? "active1" : "" ?>'>Profile</a></li>
+                <li><a href="?page=userDashboard"
+                        class='<?php echo $active_page === "userDashboard" ? "active1" : "" ?>'>Profile</a></li>
                 <li>
                     <form class="form-logout" action="./src/auth/logout.php" method="POST">
                         <input type="submit" value="Déconnexion">

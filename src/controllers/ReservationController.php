@@ -18,4 +18,8 @@ class ReservationController
     public function checkLink($id_event, $id_user){
         return $this->reservationModel->checkLink($id_event, $id_user);
     }
+
+    public function unlinkUserToEvent($id_event, $id_user){
+        return $this->reservationModel->unlinkUserToEvent($id_event, $id_user);
+    }
 }

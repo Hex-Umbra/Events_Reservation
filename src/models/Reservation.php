@@ -67,4 +67,25 @@ class Reservation
             return ["error" => "An unexpected error occurred. Please try again later."];
         }
     }
+
+    public function unlinkUserToEvent($id_event, $id_user)
+    {
+        try {
+            $sqlRequest = "DELETE FROM inscrire WHERE id_event = :id_event AND id_user = :id_user ";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            if ($stmt->execute([":id_event" => $id_event, ":id_user" => $id_user])) {
+                $reducePlaceRequest =
+                    "UPDATE events 
+                    SET places_available = places_available + 1
+                    WHERE id_event = :id_event";
+                $stmt = $this->pdo->prepare($reducePlaceRequest);
+                $stmt->execute(["id_event" => $id_event]);
+
+            }
+
+            return ["success" => "You have successfully unlinked from the event"];
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
+        }
+    }
 }

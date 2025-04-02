@@ -11,7 +11,7 @@ This is an event reservation application where organizers can create events. The
 1. [x] - Register page for new users
 2. [x] - Login Page
 3. [x] - Show all oncoming events page
-4. [ ] - Each users can sign to an event (or multiple)
+4. [x] - Each users can sign to an event (or multiple)
 5. [x] - Show Page for a specific event with all the details (description, date, place, time, organizer, number of places available)
 6. [ ] - User Profile
    1. [ ] - User can see all the events he signed to
@@ -39,7 +39,7 @@ This is an event reservation application where organizers can create events. The
 #### Changes to be made
 1. [ ] - Order events to not display passed events
 2. [ ] - Pagination for admin dashboard when viewing users, organisers, locations and events
-3. [ ] - Button "book now" only appears when user is logged in
+3. [x] - Button "book now" only appears when user is logged in
 4. [ ] - Add a Hero Section on the main page to welcome new visitors appropriately
 5. [ ] - Add a Search input in the admin section for:
    1. [ ] - Searching for a specific user through name or email

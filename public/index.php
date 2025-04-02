@@ -47,6 +47,7 @@ $myPages = [
     "createOrg" => "adminPages/adminCreateOrganization.php",
     "editOrg" => "adminPages/adminUpdateOrganizer.php",
     "deleteOrg" => "adminPages/adminDeleteOrganization.php",
+    "userDashboard" => "userDashboard.php",
 ];
 
 $page = $_GET["page"] ?? "home";
