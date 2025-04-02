@@ -1,6 +1,7 @@
 <?php
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
+    $email = $_SESSION["email"];
 }
 ?>
 

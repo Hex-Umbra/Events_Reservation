@@ -13,9 +13,9 @@ This is an event reservation application where organizers can create events. The
 3. [x] - Show all oncoming events page
 4. [x] - Each users can sign to an event (or multiple)
 5. [x] - Show Page for a specific event with all the details (description, date, place, time, organizer, number of places available)
-6. [ ] - User Profile
-   1. [ ] - User can see all the events he signed to
-   2. [ ] - User can cancel his sign to an event
+6. [x] - User Profile
+   1. [x] - User can see all the events he signed to
+   2. [x] - User can cancel his sign to an event
 7. [x] - Dashboard for admin
    1. About events
       1. [x] - Show all events

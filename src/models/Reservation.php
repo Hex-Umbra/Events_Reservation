@@ -88,4 +88,16 @@ class Reservation
             return ["error" => $th->getMessage()];
         }
     }
+
+    public function getLinkedEvents($id_user){
+        try {
+            $sqlRequest = "SELECT id_event FROM inscrire WHERE id_user = :id_user";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute(["id_user" => $id_user]);
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
+        }
+    }
 }

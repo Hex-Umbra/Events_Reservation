@@ -22,4 +22,8 @@ class ReservationController
     public function unlinkUserToEvent($id_event, $id_user){
         return $this->reservationModel->unlinkUserToEvent($id_event, $id_user);
     }
+
+    public function getReservations($id_user){
+        return $this->reservationModel->getLinkedEvents($id_user);
+    }
 }
