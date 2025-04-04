@@ -1,12 +1,13 @@
 # My Project
 
 ### App Name 
-PlanEvent
+![Project Logo](public/assets/images/bird_logo.svg)
+PlanEvent 
 
 ### Purpose
 This is an event reservation application where organizers can create events. The users will then be able to log in to the system and reserve a seat for the event. The Organization is handled by the admin.The admin can see all events and all users as well as manage them (create, delete or edit them).
 
-### Objectives
+### ![Target Icon](https://img.icons8.com/?size=25&id=2_9RfO--FNFv&format=png&color=000000) Objectives
 
 1. [x] - Register page for new users
 2. [x] - Login Page
@@ -53,7 +54,7 @@ This is an event reservation application where organizers can create events. The
 
 
 
-## Data Dictionnary
+## ![Data Icon](https://img.icons8.com/?size=25&id=11356&format=png&color=ffffff) Data Dictionnary
 
 ### user table
 | Column Name  | Data Type | Constraints| Description |
@@ -92,3 +93,11 @@ This is an event reservation application where organizers can create events. The
 |:-------------|:---------:|:----------:|:------------|
 | id_event|INT|PRIMARY KEY| Unique identifier for each event|
 |id_user |INT|PRIMARY KEY| Unique identifier for each user|
+
+## MLD and MCD
+
+![MCD](public/assets/images/MCD_PlanEvent.png)
+![MLD](public/assets/images/MLD_PlanEvent.png)
+
+## Wireframes
+[Link to PDF](Maquettage.pdf)
