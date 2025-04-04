@@ -36,7 +36,7 @@ This is an event reservation application where organizers can create events. The
       5. [ ] - Show all locations
       6. [ ] - Create new location -->
 
-#### Changes to be made
+<!-- #### Changes to be made
 1. [ ] - Order events to not display passed events
 2. [ ] - Pagination for admin dashboard when viewing users, organisers, locations and events
 3. [x] - Button "book now" only appears when user is logged in
@@ -48,11 +48,47 @@ This is an event reservation application where organizers can create events. The
 7. [ ] - Add a filter for events (to see which events are coming soon, which are today, which are past and by category)
 8. [ ] - Change the "Edit" and "Delete" Buttons For Users, Organizers and Events
 9. [ ] - For the edit Section in users, Change the Input role to a Select with the two options, admin or user.
-10. [ ] - Make the UI for admin while viewing an event more user friendly.
+10. [ ] - Make the UI for admin while viewing an event more user friendly. -->
 
 
 
 
 ## Data Dictionnary
 
-- 
+### user table
+| Column Name  | Data Type | Constraints| Description |
+|:-------------|:---------:|:----------:|:------------|
+| id_user      | INT       | PRIMARY KEY, AUTO_INCREMENT       |Unique identifier for each user
+| name         | VARCHAR(50)| NOT NULL | Username chosen by the user |
+| email        | VARCHAR(50)| NOT NULL , UNIQUE       | Hashed password for authentication |
+| password     | VARCHAR(255)| NOT NULL        | User's email address |
+| role         | VARCHAR(15)| NOT NULL       | User's attributed role |
+
+
+  ### events table
+| Column Name  | Data Type | Constraints| Description |
+|:-------------|:---------:|:----------:|:------------|
+| id_event     | INT       |PRIMARY KEY, AUTO_INCREMENT |Unique identifier for each events|
+|name|VARCHAR(255)|NOT NULL| Name of the event|
+|description|VARCHAR(255)|NOT NULL|Description for the event|
+|time|VARCHAR(255)|NOT NULL| Time of the event|
+|date|VARCHAR(255)|NOT NULL| Date of the event|
+|places_available|INT|NOT NULL| Number of places available for the event|
+|price|INT|NOT NULL| Price of the event|
+|location|Varchar(255)|NOT NULL| Location of the event|
+|image_url|Varchar(255)|NOT NULL| URL of the image of the event|
+|id_org|INT|FOREIGN KEY, NOT NULL| ID of the organiser of the event|
+
+  ### organisation table
+| Column Name  | Data Type | Constraints| Description |
+|:-------------|:---------:|:----------:|:------------|
+|id_org        |INT        | PRIMARY KEY| Unique identifier for each organizers|
+|nom_org       |VARCHAR(255)|NOT NULL | Name of the organisation|
+|tel           |VARCHAR(255)|NOT NULL | Phone number of the organisation|
+|email         |VARCHAR(255)|NOT NULL | Email of the organisation|
+
+  ### inscrire table
+| Column Name  | Data Type | Constraints| Description |
+|:-------------|:---------:|:----------:|:------------|
+| id_event|INT|PRIMARY KEY| Unique identifier for each event|
+|id_user |INT|PRIMARY KEY| Unique identifier for each user|
