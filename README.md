@@ -100,4 +100,6 @@ This is an event reservation application where organizers can create events. The
 ![MLD](public/assets/images/MLD_PlanEvent.png)
 
 ## Wireframes
-[Link to PDF](Maquettage.pdf)
+[Link to Figma](https://www.figma.com/design/nbRwW6hOlMs9gBS2cTciAy/Untitled?node-id=2-2&t=cpN36eDC0DBaEySd-0)
+<br>
+[Link to PDF with all the images](Maquettage.pdf)
