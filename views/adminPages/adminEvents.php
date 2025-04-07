@@ -16,7 +16,7 @@ $events = $eventController->getAllEvents();
 
     <div class="table-container">
 
-        <h1>All Events <a class="createUser-button" href="?page=createEvent">Create New Event</a></h1>
+        <h1>All Events <a class="create-button" href="?page=createEvent">Create New Event</a></h1>
 
         <div>
             <?php if (isset($_SESSION["successMessage"])): ?>
@@ -54,9 +54,9 @@ $events = $eventController->getAllEvents();
                         <td><?php $organizer = $organizationController->getOrganizationById($event["id_org"]);
                         echo $organizer["nom_org"] ?></td>
                         <td>
-                            <a href="?page=event&id_event=<?= $event["id_event"] ?>">Go to Event Page</a>
-                            <a href="?page=deleteEvent&id_event=<?= $event["id_event"] ?>">Delete</a>
-                            <a href="?page=editEvent&id_event=<?= $event["id_event"] ?>">Update</a>
+                            <a href="?page=event&id_event=<?= $event["id_event"] ?>" class="special-button" >Go to Event Page</a>
+                            <a href="?page=deleteEvent&id_event=<?= $event["id_event"] ?>" class="delete-button" >Delete</a>
+                            <a href="?page=editEvent&id_event=<?= $event["id_event"] ?>" class="edit-button"  >Update</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

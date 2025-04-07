@@ -89,13 +89,40 @@ class Reservation
         }
     }
 
-    public function getLinkedEvents($id_user){
+    public function getLinkedEvents($id_user)
+    {
         try {
             $sqlRequest = "SELECT id_event FROM inscrire WHERE id_user = :id_user";
             $stmt = $this->pdo->prepare($sqlRequest);
             $stmt->execute(["id_user" => $id_user]);
             $result = $stmt->fetchAll();
             return $result;
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
+        }
+    }
+
+    public function getLinkedUsers($id_event)
+    {
+        try {
+            $sqlRequest = "SELECT COUNT(id_user) AS user_count FROM inscrire WHERE id_event = :id_event";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute(["id_event" => $id_event]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $userCount = $result["user_count"];
+            return $userCount;
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
+        }
+    }
+
+    public function unlinkAllFromEvent($id_event){
+        try {
+            $sqlRequest = "DELETE FROM inscrire WHERE id_event = :id_event";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute(["id_event" => $id_event]);
+            return ["success" => "You have successfully unlinked all users from the event"];
         } catch (\Throwable $th) {
             return ["error" => $th->getMessage()];
         }

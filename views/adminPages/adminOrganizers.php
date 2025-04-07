@@ -12,7 +12,7 @@ $organizers = $organizationController->getOrganizations();
 <!-- Displaying the data -->
 <section class="section-body">
     <div class="table-container">
-        <h1>All Organizers <a class="createUser-button" href="?page=createOrg">Create New Organization</a></h1>
+        <h1>All Organizers <a class="create-button" href="?page=createOrg">Create New Organization</a></h1>
         <?php if (isset($_SESSION["successMessage"])): ?>
             <span class="success-message"><?= $_SESSION["successMessage"] ?></span>
             <?php
@@ -37,8 +37,8 @@ $organizers = $organizationController->getOrganizations();
                         <td><?php echo $organizer["tel"] ?></td>
                         <td><?php echo $organizer["email"] ?></td>
                         <td>
-                            <a href="?page=deleteOrg&id_org=<?= $organizer["id_org"] ?>">Delete</a>
-                            <a href="?page=editOrg&id_org=<?= $organizer["id_org"] ?>">Update</a>
+                            <a href="?page=deleteOrg&id_org=<?= $organizer["id_org"] ?>" class="delete-button">Delete</a>
+                            <a href="?page=editOrg&id_org=<?= $organizer["id_org"] ?>" class="edit-button">Update</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

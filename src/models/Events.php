@@ -77,9 +77,11 @@ class Events
         try {
             $sqlRequest = "DELETE FROM events WHERE id_event = :id_event";
             $stmt = $this->pdo->prepare($sqlRequest);
-            return $stmt->execute(["id_event" => $id_event]);
+            if ($stmt->execute(["id_event" => $id_event])) {
+                return ["success" => "Event deleted successfully"];
+            }
         } catch (\Throwable $th) {
-            //throw $th;
+            return ["error" => $th->getMessage()];
         }
     }
 
@@ -124,11 +126,11 @@ class Events
                 "UPDATE events 
                 WHERE id_event = :id_event
                 SET places_available = places_available + 1";
-                $stmt = $this->pdo->prepare($sqlRequest);
-                $stmt->execute(["id_event" => $id_event]);
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute(["id_event" => $id_event]);
         } catch (\Throwable $th) {
             return ["error" => "Database Access Error, couldn't reduce places available"];
         }
     }
-    
+
 }

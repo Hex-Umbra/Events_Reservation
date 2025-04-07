@@ -12,7 +12,7 @@ $allUsers = $userController->getAllUsers();
 <!-- Displaying the data -->
 <section class="section-body">
     <div class="table-container">
-        <h1>All Users <a class="createUser-button" href="?page=createUser">Add a new User</a></h1>
+        <h1>All Users <a class="create-button" href="?page=createUser">Add a new User</a></h1>
         
         <?php if (isset($_SESSION["successMessage"])): ?>
                 <span class="success-message"><?= $_SESSION["successMessage"] ?></span>
@@ -40,8 +40,8 @@ $allUsers = $userController->getAllUsers();
                         <td><?= $user["role"] ?></td>
                         <td></td>
                         <td>
-                            <a href="?page=deleteUser&id_user=<?= $user["id_user"]?>">Delete</a>
-                            <a href="?page=editUser&id_user=<?= $user["id_user"] ?>">Edit</a>
+                            <a href="?page=deleteUser&id_user=<?= $user["id_user"]?>" class="delete-button">Delete</a>
+                            <a href="?page=editUser&id_user=<?= $user["id_user"] ?>" class="edit-button">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

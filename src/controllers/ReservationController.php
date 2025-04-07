@@ -26,4 +26,12 @@ class ReservationController
     public function getReservations($id_user){
         return $this->reservationModel->getLinkedEvents($id_user);
     }
+
+    public function getUserNumber($id_event){
+        return $this->reservationModel->getLinkedUsers($id_event);
+    }
+
+    public function unlinkAllFromEvent($id_event){
+        return $this->reservationModel->unlinkAllFromEvent($id_event);
+    }
 }
