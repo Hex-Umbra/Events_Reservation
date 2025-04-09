@@ -1,15 +1,14 @@
 <?php
-      if($_SERVER["REQUEST_METHOD"] === "POST"){
-         $id_event ;
-      }
+   $events = $eventController->getAllEventsByDate();
+   if(isset($events["error"])){
+      echo $events["error"];
+   }
 ?>
 
 <div class="events-body">
 
    <div class="events-container">
-      <?php
-      $events = $eventController->getAllEventsByDate();
-      ?>
+
       <?php foreach ($events as $event): ?>
          <div class="event-card">
             <img src=<?= $event["image_url"] ?> alt="">

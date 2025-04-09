@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="./public/styles/main.css">
-
-<?php session_start();
+<?php
+ob_start();
+session_start();
 require_once "../database/connexion.php";
 require_once "../src/controllers/UserController.php";
 require_once "../src/controllers/EventsController.php";
@@ -73,6 +73,8 @@ if (empty($_SESSION)) {
         include "../views//partials/footer.php";
     }
 }
-
-
 ?>
+
+<link rel="stylesheet" href="./public/styles/main.css">
+
+<?php ob_end_flush(); ?>

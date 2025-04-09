@@ -55,7 +55,7 @@ class Events
             $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $events;
         } catch (\Throwable $th) {
-            //throw $th;
+            return ["error" => $th->getMessage()];
         }
     }
     public function getEventById($id_event)

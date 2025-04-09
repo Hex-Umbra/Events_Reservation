@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $error = $user["error"];    // If there is an error, store it in a variable to display later
   } elseif (is_array($user)) {
     // If the user exists and the password is correct, we start a session
-    session_start();
     $_SESSION['username'] = $user['name'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['role'] = $user['role'];

@@ -1,8 +1,7 @@
 <?php
-if (isset($_SESSION["role"])) {
-    if ($_SESSION["role"] !== "admin") {
-        header('Location: ./?page=home');
-    }
+if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
+    header('Location: ./?page=home');
+    exit; // Stop further script execution after the redirect
 }
 ?>
 <!-- Fetching Data -->

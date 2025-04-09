@@ -1,6 +1,9 @@
 <?php
-define("DSN", "mysql:host=localhost;dbname=Gestion_Events;charset=utf8;port=3306");
+$db_name = getenv("DB_NAME");
+$db_host = getenv("DB_HOST");
+
+define("DSN", "mysql:host=$db_host;dbname=$db_name;charset=utf8");
 
 define("USER", "admin_events");
 
-define('PASS', 'z*nySK*9F/Hcq.5C');
+define('PASS', "randomShenanigans!!//??");
