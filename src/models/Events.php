@@ -119,18 +119,29 @@ class Events
         }
     }
 
-    public function augmentByOnePlace($id_event)
+    public function getEventsFromOrganizer($id_org)
     {
         try {
-            $sqlRequest =
-                "UPDATE events 
-                WHERE id_event = :id_event
-                SET places_available = places_available + 1";
+            $sqlRequest = "SELECT * FROM events WHERE id_org = :id_org";
             $stmt = $this->pdo->prepare($sqlRequest);
-            $stmt->execute(["id_event" => $id_event]);
+            $stmt->execute(["id_org" => $id_org]);
+            $events = $stmt->fetchAll();
+            return $events;
         } catch (\Throwable $th) {
-            return ["error" => "Database Access Error, couldn't reduce places available"];
+            return ["error" => $th->getMessage()];
         }
     }
 
+    public function deleteEventsFromOrganizer($id_org)
+    {
+        try {
+            $sqlRequest = "DELETE FROM events WHERE id_org = :id_org";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            if ($stmt->execute(["id_org" => $id_org])) {
+                return ["success" => "Events deleted successfully"];
+            }
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
+        }
+    }
 }

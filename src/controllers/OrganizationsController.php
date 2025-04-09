@@ -33,5 +33,9 @@ class OrganizationsController
     public function editOrganization($id, $name, $email, $phone){
         return $this->organizationsModel->updateOrganizer($id, $name, $email, $phone);
     }
+
+    public function getNumberOfEvents($id_org){
+        return $this->organizationsModel->getNumberOfEvents($id_org);
+    }
 }
 

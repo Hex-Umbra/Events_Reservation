@@ -37,7 +37,7 @@ This is an event reservation application where organizers can create events. The
       5. [ ] - Show all locations
       6. [ ] - Create new location -->
 
-<!-- #### Changes to be made
+#### Changes to be made
 1. [ ] - Order events to not display passed events
 2. [ ] - Pagination for admin dashboard when viewing users, organisers, locations and events
 3. [x] - Button "book now" only appears when user is logged in
@@ -47,9 +47,15 @@ This is an event reservation application where organizers can create events. The
    2. [ ] - Searching for a specific event through name or description
 6. [ ] - Add a filter for users (to see who's an admin and who's a user)
 7. [ ] - Add a filter for events (to see which events are coming soon, which are today, which are past and by category)
-8. [ ] - Change the "Edit" and "Delete" Buttons For Users, Organizers and Events
+8. [X] - Change the "Edit" and "Delete" Buttons For Users, Organizers and Events
 9. [ ] - For the edit Section in users, Change the Input role to a Select with the two options, admin or user.
-10. [ ] - Make the UI for admin while viewing an event more user friendly. -->
+10. [ ] - Make the UI for admin while viewing an event more user friendly.
+11. [ ] - Make the UI for participation and information about an event more user friendly.
+12. [ ] - Make the logo clickable to go to the main page.
+13. [ ] - Add a "No account? Sign up" link on the login page.
+14. [ ] - Add a "Already have an account? Log in" link on the register page.
+15. [ ] - In Admin Panel, in the "All Users" page, show their linked events in a list
+16. [ ] - In all Events show page, change the disposition of the card so that all look the same, with the same proportions but witout the same amount of infos
 
 
 

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./public/styles/adminUpdate.css">
     <link rel="stylesheet" href="./public/styles/adminDelete.css">
     <link rel="stylesheet" href="./public/styles/adminCreate.css">
-    <title>Document</title>
+    <title>Admin Panel</title>
+    <link rel="icon" href="public/assets/images/bird_logo.svg">
 </head>
 
 <?php

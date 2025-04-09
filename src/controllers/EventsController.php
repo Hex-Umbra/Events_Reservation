@@ -38,4 +38,12 @@ class EventsController
     public function updateEvent($id, $name, $description, $date, $time, $places_available , $price, $location, $image_url, $id_org){
         return $this->eventModel->editEvent($id, $name, $description, $date, $time, $places_available, $price, $location, $image_url, $id_org);
     }
+
+    public function getEventsByOrg($id_org){
+        return $this->eventModel->getEventsFromOrganizer($id_org);
+    }
+
+    public function deleteEventsFromOrganizer($id_org){
+        return $this->eventModel->deleteEventsFromOrganizer($id_org);
+    }
 }

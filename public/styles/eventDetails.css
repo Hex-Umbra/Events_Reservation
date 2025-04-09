@@ -8,7 +8,7 @@
 .event-container {
   display: flex;
   flex-direction: row;
-  width: auto;
+  width: 75vw;
   justify-content: space-between;
   padding: 20px;
   border-radius: 10px;
@@ -43,6 +43,9 @@
   border-radius: 10px;
   margin-bottom: 20px;
   color: #4a00e0;
+  max-width: 90%;
+  min-width: 45%;
+  height: 90%;
 }
 .right-side .details p {
   font-size: 20px;

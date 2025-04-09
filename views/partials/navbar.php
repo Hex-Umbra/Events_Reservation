@@ -17,7 +17,8 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="./public/styles/eventsCards.css">
     <link rel="stylesheet" href="./public/styles/eventDetails.css">
     <link rel="stylesheet" href="./public/styles/userDashboard.css">
-    
+    <title>PlanEvent</title>
+    <link rel="icon" href="public/assets/images/bird_logo.svg">
 </head>
 
 <?php

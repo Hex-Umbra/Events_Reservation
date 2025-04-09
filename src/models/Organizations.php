@@ -49,11 +49,11 @@ class Organizations
     public function deleteOrganizer($id)
     {
         try {
-            $stmt = $this->pdo->prepare("DELETE FROM organisation WHERE id = :id ");
+            $stmt = $this->pdo->prepare("DELETE FROM organisation WHERE id_org = :id ");
             $stmt->execute(["id" => $id]);
             return ["success" => "Organizer deleted successfully"];
         } catch (\Throwable $th) {
-            return ["error" => "There was an issue deleting the organizer from the database"];
+            return ["error" => $th->getMessage()];
         }
     }
 
@@ -67,20 +67,37 @@ class Organizations
             $sqlRequest = "UPDATE organisation SET nom_org = :name, email = :email, tel = :number WHERE id_org = :id";
             $stmt = $this->pdo->prepare($sqlRequest);
 
-            if($stmt->execute([
-                "id" => $id,
-                "name" => $name,
-                "email" => $email,
-                "number" => $number
-            ])){
+            if (
+                $stmt->execute([
+                    "id" => $id,
+                    "name" => $name,
+                    "email" => $email,
+                    "number" => $number
+                ])
+            ) {
                 return ["success" => "Organizer updated successfully"];
 
-            }else{
+            } else {
                 return ["error" => "There was an issue updating the organizer"];
             }
-            
+
         } catch (\Throwable $th) {
             return ["error" => $th];
+        }
+    }
+
+    public function getNumberOfEvents($id_org)
+    {
+        try {
+            $sqlRequest = "SELECT COUNT(id_event) AS event_count FROM events WHERE id_org = :id_org";
+            $stmt = $this->pdo->prepare($sqlRequest);
+            $stmt->execute(["id_org" => $id_org]);
+            if ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $eventCount = $result["event_count"];
+                return $eventCount;
+            }
+        } catch (\Throwable $th) {
+            return ["error" => $th->getMessage()];
         }
     }
 }

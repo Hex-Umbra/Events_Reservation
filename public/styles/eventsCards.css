@@ -1,10 +1,11 @@
 .events-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     margin: 0;
+    height: 100vh;
 }
 
 .events-container {
